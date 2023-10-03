@@ -3,7 +3,7 @@ import { IconType } from 'react-icons';
 const InputGroup = (props: {
 	title: string;
 	type: string;
-	placeholder: string;
+	placeholder?: string;
 	icon?: IconType;
 	marginYValue?: string;
 	iconStyle?: { [key: string]: string };
