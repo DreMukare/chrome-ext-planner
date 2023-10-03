@@ -5,20 +5,36 @@ const InputGroup = (props: {
 	type: string;
 	placeholder: string;
 	icon?: IconType;
-	marginBottomValue?: number;
+	marginYValue?: string;
+	iconStyle?: { [key: string]: string };
 }) => {
-	const { title, type, placeholder, icon: Icon, marginBottomValue = 6 } = props; // add icon to this list
+	const {
+		title,
+		type,
+		placeholder,
+		icon: Icon,
+		marginYValue = '6',
+		iconStyle,
+	} = props; // add icon to this list
 
 	return (
-		<div className={`w-max mb-${marginBottomValue}`}>
+		<div
+			className={`flex flex-row items-center w-max gap-8 my-${marginYValue}`}
+		>
 			{Icon ? (
 				<label htmlFor={title}>
-					<Icon />
+					<Icon style={iconStyle} />
 				</label>
 			) : (
 				<label htmlFor={title}>{title}</label>
 			)}
-			<input type={type} placeholder={placeholder} name={title} id={title} />
+			<input
+				type={type}
+				placeholder={placeholder}
+				name={title}
+				id={title}
+				className='border-b border-teal-500 leading-tight focus:outline-none py-1 px-2 w-[30em] bg-transparent focus:bg-transparent placeholder-teal-500'
+			/>
 		</div>
 	);
 };

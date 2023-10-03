@@ -1,4 +1,3 @@
-import './App.css';
 import Background from './components/Background';
 import Login from './views/Login';
 import Main from './views/Main';
