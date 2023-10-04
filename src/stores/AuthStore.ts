@@ -21,7 +21,7 @@ const AuthStore = types
 	}))
 	.actions((self) => ({
 		setActiveUser(user: any) {
-			const lastActiveUserId = self.activeUser?.uid;
+			// const lastActiveUserId = self.activeUser?.uid;
 
 			self.activeUser = User.create({
 				uid: user.uid,

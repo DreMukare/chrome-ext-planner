@@ -4,11 +4,11 @@ import User from '../models/User';
 import FirebaseWrapper from './FirebaseWrapper';
 
 class UserService {
-	static updateUserInFirebase(user: Instance<typeof User>) {
+	public updateUserInFirebase(user: Instance<typeof User>) {
 		const userInfo = JSON.parse(JSON.stringify(user));
 
 		FirebaseWrapper.updateInDb('/users' + userInfo.uid, userInfo);
 	}
 }
 
-export default UserService;
+export default new UserService();

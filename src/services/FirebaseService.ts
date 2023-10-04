@@ -23,4 +23,4 @@ class FirebaseService {
 	}
 }
 
-export default FirebaseService;
+export default new FirebaseService();
