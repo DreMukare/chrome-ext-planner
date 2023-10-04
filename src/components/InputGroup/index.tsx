@@ -7,6 +7,7 @@ const InputGroup = (props: {
 	icon?: IconType;
 	marginYValue?: string;
 	iconStyle?: { [key: string]: string };
+	onChange?: Function;
 }) => {
 	const {
 		title,
@@ -15,6 +16,7 @@ const InputGroup = (props: {
 		icon: Icon,
 		marginYValue = '6',
 		iconStyle,
+		onChange: changeFn,
 	} = props; // add icon to this list
 
 	return (
@@ -34,6 +36,7 @@ const InputGroup = (props: {
 				name={title}
 				id={title}
 				className='border-b border-teal-500 leading-tight focus:outline-none py-1 px-2 w-[30em] bg-transparent focus:bg-transparent placeholder-teal-500'
+				onChange={(e) => changeFn && changeFn(e.target.value)}
 			/>
 		</div>
 	);
