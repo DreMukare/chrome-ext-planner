@@ -6,18 +6,21 @@ import Main from './views/Main';
 import SignUp from './views/SignUp';
 
 function App() {
-	const [isLoggedIn, setIsLoggedIn] = useState(false); //will be derived from store
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const signUp = false; //will figure where this is coming from soon
 	const user = rootStore.authStore.activeUser;
+	const currentView = rootStore.uiStore.currentView;
 
 	console.log('Inside App' + { user });
 	useEffect(() => {
 		if (user) {
 			setIsLoggedIn(true);
+			rootStore.uiStore.setCurrentView('main');
 		}
-	}, [user]);
+	}, [user, currentView]);
+	// TODO: persist currentView data
 
-	if (isLoggedIn) {
+	if (currentView === 'main') {
 		return (
 			<Background>
 				<Main />
@@ -25,7 +28,7 @@ function App() {
 		);
 	}
 
-	if (!isLoggedIn && signUp) {
+	if (currentView === 'signup') {
 		return (
 			<Background>
 				<SignUp />
