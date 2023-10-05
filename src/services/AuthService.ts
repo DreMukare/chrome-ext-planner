@@ -1,15 +1,14 @@
 import { auth } from '../configs/firebase';
 import {
-	FacebookAuthProvider,
 	GoogleAuthProvider,
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
 	signInWithPopup,
 	signOut,
 } from '@firebase/auth';
+import rootStore from '../stores/RootStore';
 
 const googleProvider = new GoogleAuthProvider();
-const facebookProvider = new FacebookAuthProvider();
 
 class AuthService {
 	public createUserWithEmail(email: string, password: string) {
@@ -30,30 +29,13 @@ class AuthService {
 	public loginUserWithEmail(email: string, password: string) {
 		const user = signInWithEmailAndPassword(auth, email, password)
 			.then((userCredentials) => {
+				rootStore.authStore.setActiveUser(userCredentials.user);
+				rootStore.uiStore.setCurrentView('main');
 				return userCredentials.user;
 			})
 			.catch((err) => {
 				console.error(err);
 				console.log('Failed to sign in with email and password');
-				console.log('Error Code: ' + err.code);
-				console.log('Error Message: ' + err.message);
-			});
-
-		return user;
-	}
-
-	public loginUserWithFacebook() {
-		const user = signInWithPopup(auth, facebookProvider)
-			.then((res) => {
-				// user credential
-				// const credential = GoogleAuthProvider.credentialFromResult(res)
-				// user access
-				// const token = credential.accessToken
-				return res.user;
-			})
-			.catch((err) => {
-				console.error(err);
-				console.log('Failed to sign in user with Facebook');
 				console.log('Error Code: ' + err.code);
 				console.log('Error Message: ' + err.message);
 			});
@@ -84,6 +66,8 @@ class AuthService {
 		signOut(auth)
 			.then(() => {
 				console.log('Successfully signed out');
+				rootStore.authStore.setActiveUser(null);
+				rootStore.uiStore.setCurrentView('login');
 			})
 			.catch((err) => {
 				console.log('SOMETHING WENT WRONG');

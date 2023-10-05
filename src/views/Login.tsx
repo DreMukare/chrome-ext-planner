@@ -61,12 +61,6 @@ const Login = () => {
 		rootStore.authStore.setActiveUser(user);
 	};
 
-	const loginWithFaceBook = () => {
-		const user = AuthService.loginUserWithFacebook();
-
-		rootStore.authStore.setActiveUser(user);
-	};
-
 	const setEmailInChild = (email: string) => {
 		setEmail(email);
 	};
