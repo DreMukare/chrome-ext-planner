@@ -36,25 +36,6 @@ const Login = () => {
 		[email, password]
 	);
 
-	const signUp = useCallback(
-		async (email: string, password: string) => {
-			try {
-				const user = await AuthService.createUserWithEmail(email, password);
-				user && setLoading(false);
-				rootStore.authStore.setActiveUser(user);
-			} catch (err) {
-				setLoading(false);
-				const error = err as string;
-				handleAuthError(error);
-			}
-		},
-		[email, password]
-	);
-
-	const logout = async () => {
-		AuthService.logOut();
-	};
-
 	const loginWithGoogle = () => {
 		const user = AuthService.loginUserWithGoogle();
 
@@ -71,6 +52,7 @@ const Login = () => {
 
 	return (
 		<div className='h-[100vh] w-[100vw] flex flex-col justify-center items-center'>
+			//TODO: Make card a more generic component for reusability
 			<LoginCard
 				setEmailInChild={setEmailInChild}
 				setPasswordInChild={setPasswordInChild}
@@ -78,6 +60,13 @@ const Login = () => {
 				email={email}
 				password={password}
 			/>
+			<button
+				onClick={() => {
+					rootStore.uiStore.setCurrentView('signup');
+				}}
+			>
+				Sign Up Instead
+			</button>
 		</div>
 	);
 };

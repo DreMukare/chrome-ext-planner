@@ -1,7 +1,5 @@
 import InputGroup from '../InputGroup';
-import { FaEnvelope, FaKey } from 'react-icons/fa';
-
-//TODO: Make card generic, add view password feature, implement signup
+import { FaEnvelope, FaKey, FaUser } from 'react-icons/fa';
 
 const iconStyle = {
 	color: '#38b2ac',
@@ -9,27 +7,44 @@ const iconStyle = {
 	height: '1em',
 };
 
-const LoginCard = (props: {
+const SignUpCard = (props: {
+	name: string;
 	email: string;
 	password: string;
 	setEmailInChild: Function;
 	setPasswordInChild: Function;
-	login: Function;
+	setNameInChild: Function;
+	signUp: Function;
 }) => {
-	const { email, password, setEmailInChild, setPasswordInChild, login } = props;
+	const {
+		email,
+		password,
+		setEmailInChild,
+		setPasswordInChild,
+		setNameInChild,
+		signUp,
+	} = props;
 
 	return (
 		<div
 			className=' shadow-lg flex flex-col justify-center border-solid border-3 gap-4 px-8 py-10 bg-white w-[40em] h-[20em] text-center bg-clip-padding bg-opacity-60 border border-gray-200'
 			style={{ backdropFilter: 'blur(20px)' }}
 		>
-			<h2 className='text-3xl text-teal-500'>Login</h2>
+			<h2 className='text-3xl text-teal-500'>Create your account</h2>
 			<form
 				onSubmit={(e) => {
 					e.preventDefault();
-					login(email, password);
+					signUp(name, email, password);
 				}}
 			>
+				<InputGroup
+					title='Name'
+					type='name'
+					icon={FaUser}
+					iconStyle={iconStyle}
+					placeholder='Full Name'
+					onChange={setNameInChild}
+				/>
 				<InputGroup
 					title='Email'
 					type='email'
@@ -51,11 +66,11 @@ const LoginCard = (props: {
 					className='bg-transparent hover:bg-teal-500 text-teal-500 font-semibold hover:text-white py-2 px-4 border border-teal-500 hover:border-transparent rounded w-full my-6'
 					name='submit'
 				>
-					Log In
+					Sign Up
 				</button>
 			</form>
 		</div>
 	);
 };
 
-export default LoginCard;
+export default SignUpCard;
