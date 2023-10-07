@@ -1,4 +1,6 @@
 import { types, getSnapshot, applySnapshot, Instance } from 'mobx-state-tree';
+import localforage from 'localforage';
+import { persist } from 'mst-persist';
 import AuthStore from './AuthStore';
 import UIStore from './UIStore';
 // import PlanStore from './PlanStore';
@@ -39,5 +41,11 @@ export interface IRootStore {
 }
 
 const rootStore = RootStore.create();
+
+persist('rootStore', rootStore, {
+	storage: localforage,
+	jsonify: false,
+	whitelist: ['authStore', 'uiStore'],
+});
 
 export default rootStore;

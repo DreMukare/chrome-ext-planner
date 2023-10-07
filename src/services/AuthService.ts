@@ -7,13 +7,27 @@ import {
 	signOut,
 } from '@firebase/auth';
 import rootStore from '../stores/RootStore';
+import { updateProfile } from 'firebase/auth';
 
 const googleProvider = new GoogleAuthProvider();
 
 class AuthService {
-	public createUserWithEmail(email: string, password: string) {
+	public createUserWithEmail(name: string, email: string, password: string) {
 		const user = createUserWithEmailAndPassword(auth, email, password)
 			.then((userCredential) => {
+				rootStore.authStore.setActiveUser(userCredential.user);
+				rootStore.uiStore.setCurrentView('main');
+				auth.currentUser &&
+					updateProfile(auth.currentUser, { displayName: name })
+						.then(() => {
+							console.log('Successfully set user name');
+						})
+						.catch((err) => {
+							console.log(
+								'Something went wrong with setting the name of the new user: ' +
+									err
+							);
+						});
 				return userCredential.user;
 			})
 			.catch((err) => {

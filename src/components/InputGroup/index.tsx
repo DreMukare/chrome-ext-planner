@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { IconType } from 'react-icons';
 
 const InputGroup = (props: {
@@ -9,6 +10,7 @@ const InputGroup = (props: {
 	iconStyle?: { [key: string]: string };
 	onChange?: Function;
 }) => {
+	const [value, setValue] = useState('');
 	const {
 		title,
 		type,
@@ -17,7 +19,12 @@ const InputGroup = (props: {
 		marginYValue = '6',
 		iconStyle,
 		onChange: changeFn,
-	} = props; // add icon to this list
+	} = props;
+
+	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		changeFn && changeFn(event.target.value);
+		setValue(event.target.value);
+	};
 
 	return (
 		<div
@@ -36,7 +43,8 @@ const InputGroup = (props: {
 				name={title}
 				id={title}
 				className='border-b border-teal-500 leading-tight focus:outline-none py-1 px-2 w-[30em] bg-transparent focus:bg-transparent placeholder-teal-500'
-				onChange={(e) => changeFn && changeFn(e.target.value)}
+				value={value}
+				onChange={(e) => handleChange(e)}
 			/>
 		</div>
 	);
