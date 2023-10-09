@@ -25,13 +25,25 @@ class FirebaseWrapper {
 
 		set(ref(db, refString), {
 			dataToBeWritten,
-		});
+		})
+			.then(() => {
+				console.log('Saved data');
+			})
+			.catch((err) => {
+				console.error(err);
+			});
 	}
 
 	public updateInDb(refString: string, data: { [key: string]: any }) {
 		const updateData = JSON.parse(JSON.stringify(data));
 
-		update(ref(db, refString), { updateData });
+		update(ref(db, refString), { updateData })
+			.then(() => {
+				console.log('Updated data');
+			})
+			.catch((err) => {
+				console.error(err);
+			});
 	}
 }
 

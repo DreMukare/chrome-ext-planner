@@ -5,6 +5,8 @@ const UIStore = types
 		currentView: types.optional(types.string, 'login'),
 		errorMessage: types.maybe(types.string),
 		isDarkMode: false,
+		showSettingsContainer: false,
+		activeSettingsTab: types.optional(types.string, 'settings'),
 	})
 	.actions((self) => ({
 		setDarkMode(toggleDarkMode: boolean) {
@@ -18,6 +20,14 @@ const UIStore = types
 		setCurrentView(view: string) {
 			self.currentView = view;
 		},
+
+		setShowSettingsContainer(show: boolean) {
+			self.showSettingsContainer = show;
+		},
+
+		setActiveSettingsTab(tab: string) {
+			self.activeSettingsTab = tab;
+		},
 	}))
 	.views((self) => ({
 		getCurrentView() {
@@ -26,6 +36,10 @@ const UIStore = types
 
 		getIsDarkMode() {
 			return self.isDarkMode;
+		},
+
+		getShowSettingsContainer() {
+			return self.showSettingsContainer;
 		},
 	}));
 
