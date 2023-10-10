@@ -3,6 +3,7 @@ import IconButton from '../IconButton';
 import rootStore from '../../stores/RootStore';
 import { FaCog } from 'react-icons/fa';
 import SettingsTab from '../SettingsTab';
+import screw from '../../assets/btnimages/screw.svg';
 
 const iconStyle = {};
 
