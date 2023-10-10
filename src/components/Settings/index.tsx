@@ -1,11 +1,14 @@
 import { observable } from 'mobx';
 import IconButton from '../IconButton';
 import rootStore from '../../stores/RootStore';
-import { FaCog } from 'react-icons/fa';
 import SettingsTab from '../SettingsTab';
 import screw from '../../assets/btnimages/screw.svg';
 
-const iconStyle = {};
+const imgStyle = {
+	margin: '13px',
+	width: '19px',
+	height: '19px',
+};
 
 const Settings = () => {
 	const handleClick = () => {
@@ -20,8 +23,9 @@ const Settings = () => {
 			<IconButton
 				onClick={handleClick}
 				name='settingsToggle'
-				icon={FaCog}
-				iconStyle={iconStyle}
+				image={screw}
+				imgStyle={imgStyle}
+				imageAltText='Toggle settings view on and off'
 			/>
 		</div>
 	);

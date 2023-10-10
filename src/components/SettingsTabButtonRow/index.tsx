@@ -45,6 +45,7 @@ const SettingsTabButtonRow = () => {
 					}
 					image={settingsImg}
 					imgStyle={imgStyle}
+					imageAltText='Change to settings tab'
 				/>
 			</div>
 			<div>
@@ -59,6 +60,7 @@ const SettingsTabButtonRow = () => {
 					}
 					image={isProfile ? coloredSmile : smile}
 					imgStyle={imgStyle}
+					imageAltText='Change to profile tab'
 				/>
 			</div>
 			<div>
@@ -73,6 +75,7 @@ const SettingsTabButtonRow = () => {
 					}
 					image={hands}
 					imgStyle={imgStyle}
+					imageAltText='Change to account tab'
 				/>
 			</div>
 		</div>

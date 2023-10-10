@@ -1,7 +1,7 @@
-import React from 'react';
+const UserSettingsTab = (props: { tabContainerStyle: string }) => {
+	const { tabContainerStyle } = props;
 
-const UserSettingsTab = () => {
-	return <div>UserSettingsTab</div>;
+	return <div className={tabContainerStyle}>UserSettingsTab</div>;
 };
 
 export default UserSettingsTab;

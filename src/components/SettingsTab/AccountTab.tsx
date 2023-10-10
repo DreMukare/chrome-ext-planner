@@ -1,7 +1,7 @@
-import React from 'react';
+const AccountTab = (props: { tabContainerStyle: string }) => {
+	const { tabContainerStyle } = props;
 
-const AccountTab = () => {
-	return <div>AccountTab</div>;
+	return <div className={tabContainerStyle}>AccountTab</div>;
 };
 
 export default AccountTab;

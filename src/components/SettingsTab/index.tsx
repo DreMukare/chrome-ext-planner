@@ -5,17 +5,20 @@ import ProfileTab from './ProfileTab';
 import UserSettingsTab from './UserSettingsTab';
 import SettingsTabButtonRow from '../SettingsTabButtonRow';
 
+const tabContainerStyle =
+	'ml-[20px] w-[361px] h-[484] rounded-[20px] bg-[#FEFAFA]';
+
 const SettingsTab = () => {
 	let activeTab;
 
 	if (rootStore.uiStore.activeSettingsTab === 'settings')
-		activeTab = <UserSettingsTab />;
+		activeTab = <UserSettingsTab tabContainerStyle={tabContainerStyle} />;
 
 	if (rootStore.uiStore.activeSettingsTab === 'profile')
-		activeTab = <ProfileTab />;
+		activeTab = <ProfileTab tabContainerStyle={tabContainerStyle} />;
 
 	if (rootStore.uiStore.activeSettingsTab === 'account')
-		activeTab = <AccountTab />;
+		activeTab = <AccountTab tabContainerStyle={tabContainerStyle} />;
 
 	return (
 		<div>
