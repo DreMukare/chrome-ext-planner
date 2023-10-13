@@ -1,0 +1,66 @@
+.toggleInputContainer {
+	font-size: 14px;
+	letter-spacing: 0px;
+	min-width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 30px;
+	/* border-bottom: 1px solid #000000; */
+}
+
+.toggleInputContainer .dotAndText {
+	display: flex;
+	align-items: center;
+	gap: 12.84px;
+	margin-right: 20px;
+	width: 200px;
+}
+
+.dot {
+	height: 7px;
+	width: 7px;
+	max-width: 7px;
+	border-radius: 360px;
+	transform: matrix(1, -0.02, 0.02, 1, 0, 0);
+}
+
+.toggleBtn {
+	display: flex;
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 78px;
+	height: 28px;
+	background-color: #f4f4f4;
+	border: 1px solid #e5e5e5;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.switch::after {
+	content: '';
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0.15);
+	top: 4px;
+	left: 4px;
+	transition: all 0.3s;
+}
+.checkbox {
+	visibility: hidden;
+}
+
+.checkbox:checked + .switch::after {
+	right: 4px;
+	left: 54px;
+	background-color: #e765ff;
+}
+.checkbox:checked + .switch {
+	background-color: #ffefef;
+	border: 1px solid #ffbfbf;
+}

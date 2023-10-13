@@ -21,6 +21,7 @@ const SettingsTab = () => {
 				tabContainerStyle={tabContainerStyle}
 				title='Settings'
 				titleSectionStyle={titleSectionStyle}
+				children={<div></div>}
 			/>
 		);
 
@@ -30,6 +31,7 @@ const SettingsTab = () => {
 				tabContainerStyle={tabContainerStyle}
 				title='Profile'
 				titleSectionStyle={titleSectionStyle}
+				children={<div></div>}
 			/>
 		);
 
@@ -39,6 +41,7 @@ const SettingsTab = () => {
 				tabContainerStyle={tabContainerStyle}
 				title='Account'
 				titleSectionStyle={titleSectionStyle}
+				children={<div></div>}
 			/>
 		);
 
