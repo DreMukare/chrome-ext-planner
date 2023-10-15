@@ -1,10 +1,8 @@
-import { ReactNode } from 'react';
-
 const InnerTab = (props: {
 	tabContainerStyle: string;
 	title: string;
 	titleSectionStyle: { [key: string]: string };
-	children: ReactNode;
+	children: JSX.Element;
 }) => {
 	const { tabContainerStyle, title, titleSectionStyle, children } = props;
 	return (

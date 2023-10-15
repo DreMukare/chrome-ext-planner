@@ -2,6 +2,9 @@ import { observer } from 'mobx-react';
 import rootStore from '../../stores/RootStore';
 import SettingsTabButtonRow from '../SettingsTabButtonRow';
 import InnerTab from './InnerTab';
+import TabBody from './TabBody';
+import MainSettings from './MainSettings';
+import Profile from './Profile';
 
 const tabContainerStyle =
 	'ml-[20px] w-[361px] h-[484] rounded-[20px] bg-[#FEFAFA]';
@@ -21,7 +24,17 @@ const SettingsTab = () => {
 				tabContainerStyle={tabContainerStyle}
 				title='Settings'
 				titleSectionStyle={titleSectionStyle}
-				children={<div></div>}
+				children={
+					<TabBody>
+						<InnerTab
+							title='Settings'
+							titleSectionStyle={titleSectionStyle}
+							tabContainerStyle={tabContainerStyle}
+						>
+							<MainSettings />
+						</InnerTab>
+					</TabBody>
+				}
 			/>
 		);
 
@@ -31,19 +44,29 @@ const SettingsTab = () => {
 				tabContainerStyle={tabContainerStyle}
 				title='Profile'
 				titleSectionStyle={titleSectionStyle}
-				children={<div></div>}
+				children={
+					<TabBody>
+						<InnerTab
+							title='Profile'
+							titleSectionStyle={titleSectionStyle}
+							tabContainerStyle={tabContainerStyle}
+						>
+							<Profile />
+						</InnerTab>
+					</TabBody>
+				}
 			/>
 		);
 
-	if (rootStore.uiStore.activeSettingsTab === 'account')
-		activeTab = (
-			<InnerTab
-				tabContainerStyle={tabContainerStyle}
-				title='Account'
-				titleSectionStyle={titleSectionStyle}
-				children={<div></div>}
-			/>
-		);
+	// if (rootStore.uiStore.activeSettingsTab === 'account')
+	// 	activeTab = (
+	// 		<InnerTab
+	// 			tabContainerStyle={tabContainerStyle}
+	// 			title='Account'
+	// 			titleSectionStyle={titleSectionStyle}
+	// 			children={<TabBody></TabBody>}
+	// 		/>
+	// 	);
 
 	return (
 		<div>

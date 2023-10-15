@@ -5,6 +5,12 @@ const UIStore = types
 		currentView: types.optional(types.string, 'login'),
 		errorMessage: types.maybe(types.string),
 		isDarkMode: false,
+		isQuestionVisible: true,
+		isWeatherVisible: true,
+		isPlannerVisible: false,
+		displayMonthsOrYears: types.optional(types.string, 'months'),
+		showCaloryInput: true,
+		timeFormat: types.optional(types.string, '24'),
 		showSettingsContainer: false,
 		activeSettingsTab: types.optional(types.string, 'settings'),
 	})
@@ -27,6 +33,30 @@ const UIStore = types
 
 		setActiveSettingsTab(tab: string) {
 			self.activeSettingsTab = tab;
+		},
+
+		setIsQuestionVisible(visibility: boolean) {
+			self.isQuestionVisible = visibility;
+		},
+
+		setShowCaloryInput(show: boolean) {
+			self.showCaloryInput = show;
+		},
+
+		setIsWeatherVisibile(weatherVisibility: boolean) {
+			self.isWeatherVisible = weatherVisibility;
+		},
+
+		setTimeFormat(timeFormat: '24' | '12') {
+			self.timeFormat = timeFormat;
+		},
+
+		setPlannerVisibility(visibility: boolean) {
+			self.isPlannerVisible = visibility;
+		},
+
+		setDisplayMonthsOrYears(monthsOrYears: 'months' | 'years') {
+			self.displayMonthsOrYears = monthsOrYears;
 		},
 	}))
 	.views((self) => ({

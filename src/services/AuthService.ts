@@ -7,7 +7,11 @@ import {
 	signOut,
 } from '@firebase/auth';
 import rootStore from '../stores/RootStore';
-import { updateProfile } from 'firebase/auth';
+import {
+	confirmPasswordReset,
+	sendPasswordResetEmail,
+	updateProfile,
+} from 'firebase/auth';
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -87,6 +91,28 @@ class AuthService {
 				console.log('SOMETHING WENT WRONG');
 				console.log(err);
 			});
+	}
+
+	public async updateUserPassword(email: string) {
+		// Andrew: incomplete function
+		// default settings from FireBase docs
+		const actionCodeSettings = {
+			url: 'https://www.example.com/?email=user@example.com',
+			iOS: {
+				bundleId: 'com.example.ios',
+			},
+			android: {
+				packageName: 'com.example.android',
+				installApp: true,
+				minimumVersion: '12',
+			},
+			handleCodeInApp: true,
+		};
+		await sendPasswordResetEmail(auth, email, actionCodeSettings);
+		// Obtain code and new pass from user.
+		const code = '';
+		const newPass = '';
+		await confirmPasswordReset(auth, code, newPass);
 	}
 }
 
