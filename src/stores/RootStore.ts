@@ -3,7 +3,7 @@ import localforage from 'localforage';
 import { persist } from 'mst-persist';
 import AuthStore from './AuthStore';
 import UIStore from './UIStore';
-// import PlanStore from './PlanStore';
+import PlanStore from './PlanStore';
 // import ThemeStore from './ThemeStore';
 
 export const RootStore = types
@@ -11,7 +11,7 @@ export const RootStore = types
 		storeName: 'rootStore',
 		authStore: types.optional(AuthStore, () => AuthStore.create()),
 		uiStore: types.optional(UIStore, () => UIStore.create()),
-		// planStore: types.optional(PlanStore, () => PlanStore.create()),
+		planStore: types.optional(PlanStore, () => PlanStore.create()),
 		// profileStore: types.optional(ProfileStore, () => ProfileStore.create()),
 		// themeStore: types.optional(ThemeStore, () => ThemeStore.create())
 	})
