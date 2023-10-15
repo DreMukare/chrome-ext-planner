@@ -1,0 +1,17 @@
+/* 
+* Styles for the icon to toggle plan view 
+*/
+.planToggle {
+	position: absolute;
+	right: 15px;
+	bottom: 5px;
+	margin: 5px;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.planToggle img {
+	height: 25.74px;
+	width: 19px;
+}

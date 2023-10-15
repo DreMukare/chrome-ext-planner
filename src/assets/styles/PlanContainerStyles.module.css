@@ -1,0 +1,165 @@
+/* Hiding scrollbar */
+::-webkit-scrollbar {
+	display: none;
+}
+
+.planContainer {
+	transition: 0.3s ease-in-out;
+	width: 50.875rem;
+	max-width: 50.875rem;
+	min-width: 50.875rem;
+	height: 95vh;
+	background-color: white;
+	position: absolute;
+	bottom: 45px;
+	right: 15px;
+	border-radius: 19px;
+}
+
+/*
+* styling for textareas
+*/
+.planContainer textarea {
+	padding: 5px;
+	margin-top: 7px;
+	height: 22px;
+	min-height: 22px;
+	transition: 0.3s ease-in-out;
+}
+
+.planContainer textarea:hover,
+.planContainer textarea:focus,
+.planContainer textarea:active {
+	padding: 5px;
+	height: 22px;
+}
+
+/*
+* styling for checkboxes
+*/
+.planContainer input[type='checkbox'] {
+	position: relative;
+	border: none;
+	outline: none;
+	height: 5px;
+	width: 5px;
+}
+
+.planContainer input[type='checkbox']::before {
+	position: absolute;
+	content: '';
+	height: 13px;
+	width: 13px;
+	background-color: white;
+	border: 1px solid grey;
+	border-radius: 360px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+}
+
+.planContainer input[type='checkbox']:checked::before {
+	background: url('../images/check.svg');
+	background-size: 15px 15px;
+	height: 15px;
+	width: 15px;
+	border: none;
+}
+
+.darkCheckbox::before {
+	background: #000 !important;
+	border: 2px solid white !important;
+}
+
+/* Planner form */
+.planner {
+	height: 100%;
+	padding-top: 14px;
+	border-radius: 19px;
+	position: absolute;
+	left: 0;
+	width: 43.813rem;
+	max-width: 43.813rem;
+	font-size: 12px;
+	letter-spacing: 0;
+	color: black;
+	text-align: left;
+	overflow-y: scroll;
+}
+
+/* animations */
+
+.scaleIn {
+	-webkit-animation: scale-in-br 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation: scale-in-br 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.scaleOut {
+	-webkit-animation: scale-out-br 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+		both;
+	animation: scale-out-br 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+@-webkit-keyframes scale-in-br {
+	0% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+		-webkit-transform-origin: 100% 100%;
+		transform-origin: 100% 100%;
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		-webkit-transform-origin: 100% 100%;
+		transform-origin: 100% 100%;
+		opacity: 1;
+	}
+}
+@keyframes scale-in-br {
+	0% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+		-webkit-transform-origin: 100% 100%;
+		transform-origin: 100% 100%;
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		-webkit-transform-origin: 100% 100%;
+		transform-origin: 100% 100%;
+		opacity: 1;
+	}
+}
+@-webkit-keyframes scale-out-br {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		-webkit-transform-origin: 100% 100%;
+		transform-origin: 100% 100%;
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+		-webkit-transform-origin: 100% 100%;
+		transform-origin: 100% 100%;
+		opacity: 1;
+	}
+}
+@keyframes scale-out-br {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		-webkit-transform-origin: 100% 100%;
+		transform-origin: 100% 100%;
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+		-webkit-transform-origin: 100% 100%;
+		transform-origin: 100% 100%;
+		opacity: 1;
+	}
+}

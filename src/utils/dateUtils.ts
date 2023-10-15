@@ -18,8 +18,8 @@ export type MonthType =
 
 export const isLeapYear = (year: string) => {
 	return (
-		(0 === parseInt(currentYear) % 4 && 0 !== parseInt(currentYear) % 100) ||
-		0 === parseInt(currentYear) % 400
+		(0 === parseInt(year) % 4 && 0 !== parseInt(year) % 100) ||
+		0 === parseInt(year) % 400
 	);
 };
 
@@ -40,4 +40,10 @@ export const daysInMonths = {
 
 export const getNumberOfDaysInMonth = (month: MonthType) => {
 	return daysInMonths[month];
+};
+
+export const getDayName = (month: string, day: string, year: string) => {
+	return new Date(`${month}/${day}/${year}`).toLocaleDateString('en-US', {
+		weekday: 'short',
+	});
 };

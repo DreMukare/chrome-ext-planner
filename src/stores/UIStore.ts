@@ -8,6 +8,7 @@ const UIStore = types
 		isQuestionVisible: true,
 		isWeatherVisible: true,
 		isPlannerVisible: false,
+		isPlannerOpen: false,
 		displayMonthsOrYears: types.optional(types.string, 'months'),
 		showCaloryInput: true,
 		timeFormat: types.optional(types.string, '24'),
@@ -57,6 +58,10 @@ const UIStore = types
 
 		setDisplayMonthsOrYears(monthsOrYears: 'months' | 'years') {
 			self.displayMonthsOrYears = monthsOrYears;
+		},
+
+		setPlannerOpenState(openOrClosed: boolean) {
+			self.isPlannerOpen = openOrClosed;
 		},
 	}))
 	.views((self) => ({
