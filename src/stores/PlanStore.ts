@@ -25,6 +25,11 @@ const PlanStore = types
 		setCurrentYear(year: string) {
 			self.currentYear = year;
 		},
+
+		setUpdatePlan(planKey: string, planValue: string) {
+			const newPlan = { ...self.plan, [planKey]: planValue };
+			self.plan = JSON.parse(JSON.stringify(newPlan));
+		},
 	}));
 
 export default PlanStore;
