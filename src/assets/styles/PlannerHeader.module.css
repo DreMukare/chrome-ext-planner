@@ -1,0 +1,55 @@
+.dateDisplay {
+	font-size: 10px;
+	margin-left: 51px;
+	margin-top: 14px;
+	width: 172px;
+	height: 28px;
+	background-color: black;
+	border-radius: 360px;
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	margin-bottom: 14px;
+	color: white;
+	letter-spacing: 3px;
+}
+
+.dateDisplay .gradientDot {
+	background: hsla(21, 88%, 45%, 1);
+
+	background: linear-gradient(
+		0deg,
+		hsla(21, 88%, 45%, 1) 0%,
+		hsla(49, 76%, 64%, 1) 70%
+	);
+
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#D8550E", endColorstr="#E9CF5B", GradientType=1 );
+	width: 13px;
+	height: 13px;
+	border-radius: 360px;
+	margin-left: 10px;
+}
+
+.colorChooser {
+	display: flex;
+	align-items: center;
+	margin-left: 30px;
+	column-gap: 16px;
+}
+
+.colorButton {
+	width: 12px;
+	height: 12px;
+	border-radius: 360px;
+	border: none;
+	outline: none;
+	background-color: #4e1f77;
+	position: relative;
+}
+
+.colorButton .themeTick {
+	position: absolute;
+	left: 50%;
+	top: -5px;
+	transform: translateX(-50%);
+}

@@ -1,6 +1,13 @@
 import { useState, useRef, LegacyRef } from 'react';
 import styles from '../../assets/styles/PlanContainer.module.css';
 import PlannerHeader from './PlannerHeader';
+import GratefulForAndExcitedAbout from './GratefulForAndExcitedAbout';
+import DailyTodo from './DailyTodo';
+import MainThreeTodo from './MainThreeTodo';
+import MealSection from './MealSection';
+import PlannerFooterSection from './PlannerFooterSection';
+import WaterSection from './WaterSection';
+import ExerciseMeditationAndRelaxation from './ExerciseMeditationAndRelaxation';
 
 const PlanContainer = (props: {
 	animationStyle: string;
