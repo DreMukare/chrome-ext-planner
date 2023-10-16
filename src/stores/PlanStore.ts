@@ -26,7 +26,13 @@ const PlanStore = types
 			self.currentYear = year;
 		},
 
-		setUpdatePlan(planKey: string, planValue: string) {
+		setUpdatePlan(
+			planKey: string,
+			planValue:
+				| string
+				| { [key: string]: string }[]
+				| { [key: string]: string }
+		) {
 			const newPlan = { ...self.plan, [planKey]: planValue };
 			self.plan = JSON.parse(JSON.stringify(newPlan));
 		},

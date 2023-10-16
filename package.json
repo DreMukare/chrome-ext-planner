@@ -18,14 +18,18 @@
     "mobx-state-tree": "^5.2.0",
     "mst-persist": "^0.1.4",
     "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-contenteditable": "^3.3.7",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.11.0"
+    "react-icons": "^4.11.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^4.36.0",
     "@types/react": "^18.2.15",
+    "@types/react-beautiful-dnd": "^13.1.5",
     "@types/react-dom": "^18.2.7",
+    "@types/uuid": "^9.0.5",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
