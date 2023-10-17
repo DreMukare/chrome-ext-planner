@@ -1,0 +1,99 @@
+.water {
+	margin-top: 30px;
+	margin-left: 51px;
+	padding-left: 20px;
+	display: flex;
+	align-items: center;
+	gap: 38.5px;
+	height: 83px;
+	max-height: 83px;
+	border: 0.5px solid #e2e2e2;
+	border-radius: 9px;
+	width: 603px;
+	background-color: #fcfaff;
+}
+
+.water .waterChecks {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+}
+
+.water .waterChecks .betweenChecks {
+	border: 0.5px solid #e2e2e2;
+	width: 32.5px;
+}
+
+.water .waterChecks .labelArea {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.water .waterChecks .labelArea {
+	position: relative;
+}
+
+.water .waterChecks .labelArea img {
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	top: -7px;
+	left: 5px;
+	visibility: hidden;
+}
+
+.water .waterChecks label {
+	font-size: 11px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 24px;
+	height: 24px;
+	box-shadow: none;
+	border: 0.5px solid #c6e0ff;
+	background-color: #fcfaff;
+	border-radius: 360px;
+	cursor: pointer;
+}
+
+.water .waterChecks label:hover {
+	box-shadow: 0px 3px 3px #93b0ff;
+	color: white;
+	background-color: #93b0ff;
+}
+
+.water .waterChecks input[type='radio']:checked label {
+	box-shadow: 0px 3px 3px #93b0ff;
+	color: white;
+	background-color: #93b0ff;
+}
+
+.water .waterChecks input[type='radio']:checked ~ .labelArea label {
+	color: white;
+	background-color: #93b0ff;
+}
+
+.wiggling {
+	transition: 0.3 ease-in-out;
+	animation: shake 0.6s ease-in-out infinite;
+	transform: rotate(0);
+}
+
+@keyframes shake {
+	0% {
+		transform: rotate(0);
+	}
+	25% {
+		transform: rotate(30deg);
+	}
+	50% {
+		transform: rotate(-20deg);
+	}
+	75% {
+		transform: rotate(15deg);
+	}
+	100% {
+		transform: rotate(0);
+	}
+}

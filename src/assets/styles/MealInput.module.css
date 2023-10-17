@@ -1,0 +1,70 @@
+.meal {
+	min-width: 190px;
+}
+
+.meal .mealInput {
+	display: flex;
+	align-items: flex-end;
+}
+
+.meal svg {
+	width: 17px;
+	height: 17px;
+	stroke: #ff9300;
+	border: 1px solid #cbcbcb;
+	border-radius: 360px;
+}
+
+.meal svg:hover {
+	stroke: white;
+	background: #ff9300;
+	border-color: #ff9300;
+}
+
+.meal .mealInput button {
+	opacity: 0;
+}
+
+.meal .mealInput:hover button {
+	opacity: 1;
+}
+
+.meal .mealInput button svg {
+	stroke: #707070;
+	background-color: white;
+	border-color: white;
+	border: 1px solid white;
+	border-radius: 360px;
+	width: 14px;
+	height: 14px;
+}
+
+.meal .mealInput button svg:hover {
+	stroke: white;
+	background-color: black;
+	border: 1px solid black;
+}
+
+.meal .mealInput .caloriesText:active ~ button,
+.meal .mealInput .caloriesText:hover ~ button,
+.meal .mealInput .caloriesText:focus ~ button,
+.meal .mealInput .mealText:active ~ button,
+.meal .mealInput .mealText:hover ~ button,
+.meal .mealInput .mealText:focus ~ button {
+	opacity: 1;
+}
+
+.meal .mealInput .mealText {
+	width: 100%;
+}
+
+.meal .mealInput .mealDot {
+	width: 3px;
+	height: 3px;
+	background-color: black;
+	border-radius: 360px;
+}
+
+.meal .mealInput .caloriesText {
+	width: 45px;
+}

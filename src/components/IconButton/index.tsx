@@ -13,6 +13,7 @@ const IconButton = (props: {
 	svgImage?: React.ReactNode | JSX.Element;
 	hasImgAndText?: boolean;
 	btnText?: string;
+	isButtonDisabled?: boolean;
 }) => {
 	const {
 		onClick,
@@ -26,10 +27,19 @@ const IconButton = (props: {
 		svgImage,
 		hasImgAndText,
 		btnText,
+		isButtonDisabled,
 	} = props;
 
 	return (
-		<button onClick={() => onClick()} name={name} style={btnStyle}>
+		<button
+			onClick={(e) => {
+				e.preventDefault;
+				onClick();
+			}}
+			name={name}
+			style={btnStyle}
+			disabled={isButtonDisabled}
+		>
 			{Icon && <Icon style={iconStyle} />}
 			{Image && imageAltText && (
 				<img src={Image} alt={imageAltText} style={imgStyle} />

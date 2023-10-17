@@ -1,0 +1,28 @@
+.meals {
+	margin-left: 51px;
+	margin-right: 51px;
+	margin-top: 30px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 22px;
+}
+
+.meals textarea {
+	transition: 0.3s ease-in-out;
+}
+
+.meals input[type='text'],
+.meals input[type='text']:focus,
+.meals input[type='text']:active {
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	outline: none;
+	margin-top: 7px;
+	border-bottom: 0.5px solid #e2e2e2;
+	color: #4e1f77;
+	font-family: sans-serif;
+	padding: 3px;
+	transition: 0.3s ease-in-out;
+}
