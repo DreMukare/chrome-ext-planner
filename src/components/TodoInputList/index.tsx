@@ -41,7 +41,7 @@ const EmptyListAddBtnSvg = () => (
 );
 
 const TodoInput = (props: {
-	inputsList: { [key: string]: string | boolean }[];
+	inputsList: { uid: string; text: string | undefined; checked: boolean }[];
 	labelText: string;
 	checkboxName: string;
 	textareaName: string;
@@ -52,10 +52,14 @@ const TodoInput = (props: {
 	const isDarkMode = rootStore.uiStore.isDarkMode;
 
 	const handleCheckboxChange = (inputGroup: {
-		[key: string]: string | boolean;
+		uid: string;
+		text: string | undefined;
+		checked: boolean;
 	}) => {
-		inputGroup.checked = !inputGroup.checked;
-		rootStore.planStore.setUpdatePlan(modelName, inputGroup);
+		if (inputGroup) {
+			inputGroup.checked = !inputGroup.checked;
+			rootStore.planStore.setUpdatePlan(modelName, inputGroup);
+		}
 	};
 
 	const handleKeyDown = (

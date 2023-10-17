@@ -30,7 +30,8 @@ const PlanStore = types
 			planKey: string,
 			planValue:
 				| string
-				| { [key: string]: string | boolean }[]
+				| { uid: string; text: string | undefined; checked: boolean }[]
+				| { uid: string; text: string | undefined; checked: boolean }
 				| { [key: string]: string | boolean }
 		) {
 			const newPlan = { ...self.plan, [planKey]: planValue };
