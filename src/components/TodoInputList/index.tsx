@@ -46,10 +46,18 @@ const TodoInput = (props: {
 	checkboxName: string;
 	textareaName: string;
 	modelName: string;
+	styleOverride?: CSSModuleClasses;
 }) => {
-	const { inputsList, labelText, checkboxName, textareaName, modelName } =
-		props;
+	const {
+		inputsList,
+		labelText,
+		checkboxName,
+		textareaName,
+		modelName,
+		styleOverride,
+	} = props;
 	const isDarkMode = rootStore.uiStore.isDarkMode;
+	const stylesForComponent = styleOverride ? styleOverride : styles;
 
 	const handleCheckboxChange = (inputGroup: {
 		uid: string;
@@ -108,7 +116,7 @@ const TodoInput = (props: {
 			<Droppable droppableId='droppable-1'>
 				{(provided, _) => (
 					<div
-						className={styles.listContainer}
+						className={stylesForComponent.listContainer}
 						ref={provided.innerRef}
 						{...provided.droppableProps}
 					>
@@ -124,8 +132,8 @@ const TodoInput = (props: {
 											<div
 												ref={provided.innerRef}
 												{...provided.draggableProps}
-												className={`${styles.listItem} ${
-													isDarkMode ? styles.dark : ''
+												className={`${stylesForComponent.listItem} ${
+													isDarkMode ? stylesForComponent.dark : ''
 												}`}
 											>
 												<input
@@ -137,7 +145,7 @@ const TodoInput = (props: {
 													className={
 														isDarkMode
 															? !inputsList[idx].checked
-																? styles.darkCheckbox
+																? stylesForComponent.darkCheckbox
 																: ''
 															: ''
 													}
@@ -151,10 +159,10 @@ const TodoInput = (props: {
 													value={String(inputsList[idx].text)}
 													className={
 														inputsList[idx].checked
-															? `${styles.todoDone} ${styles.todoInput}`
+															? `${stylesForComponent.todoDone} ${stylesForComponent.todoInput}`
 															: isDarkMode
-															? `${styles.todoDark} ${styles.todoInput}`
-															: styles.todoInput
+															? `${stylesForComponent.todoDark} ${stylesForComponent.todoInput}`
+															: stylesForComponent.todoInput
 													}
 													style={{}}
 												/>
@@ -167,7 +175,7 @@ const TodoInput = (props: {
 													{...provided.dragHandleProps}
 													src={drag}
 													alt='drag icon'
-													className={styles.draggable}
+													className={stylesForComponent.draggable}
 												/>
 											</div>
 										);
