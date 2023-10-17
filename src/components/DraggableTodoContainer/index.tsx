@@ -2,8 +2,8 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import rootStore from '../../stores/RootStore';
 
 const DraggableTodoContainer = (props: {
-	inputsList: { [key: string]: string }[];
-	children: JSX.Element;
+	inputsList: { [key: string]: string | boolean }[];
+	children: JSX.Element | JSX.Element[];
 }) => {
 	const { inputsList, children } = props;
 	return (

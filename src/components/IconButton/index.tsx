@@ -10,6 +10,9 @@ const IconButton = (props: {
 	iconStyle?: CSSProperties;
 	imgStyle?: CSSProperties;
 	btnStyle?: CSSProperties;
+	svgImage?: React.ReactNode | JSX.Element;
+	hasImgAndText?: boolean;
+	btnText?: string;
 }) => {
 	const {
 		onClick,
@@ -20,6 +23,9 @@ const IconButton = (props: {
 		imageAltText,
 		btnStyle,
 		imgStyle,
+		svgImage,
+		hasImgAndText,
+		btnText,
 	} = props;
 
 	return (
@@ -27,6 +33,23 @@ const IconButton = (props: {
 			{Icon && <Icon style={iconStyle} />}
 			{Image && imageAltText && (
 				<img src={Image} alt={imageAltText} style={imgStyle} />
+			)}
+			{svgImage && svgImage}
+			{hasImgAndText && Icon && (
+				<>
+					<Icon style={iconStyle} /> <span>{btnText}</span>
+				</>
+			)}
+			{hasImgAndText && Image && imageAltText && (
+				<>
+					<img src={Image} alt={imageAltText} style={imgStyle} />{' '}
+					<span>{btnText}</span>
+				</>
+			)}
+			{hasImgAndText && svgImage && (
+				<>
+					{svgImage} <span>{btnText}</span>
+				</>
 			)}
 		</button>
 	);

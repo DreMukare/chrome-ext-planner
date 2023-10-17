@@ -30,8 +30,8 @@ const PlanStore = types
 			planKey: string,
 			planValue:
 				| string
-				| { [key: string]: string }[]
-				| { [key: string]: string }
+				| { [key: string]: string | boolean }[]
+				| { [key: string]: string | boolean }
 		) {
 			const newPlan = { ...self.plan, [planKey]: planValue };
 			self.plan = JSON.parse(JSON.stringify(newPlan));
