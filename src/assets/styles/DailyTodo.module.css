@@ -1,4 +1,4 @@
-.dailyToDoContainer {
+.listContainer {
 	margin-top: -7px;
 	margin-bottom: 14px;
 	margin-left: 51px;
@@ -10,51 +10,51 @@
 	border-radius: 9px;
 }
 
-.dailyToDoContainer .listSection {
+.listContainer .listSection {
 	margin-top: 14px;
 }
 
-.dailyToDoContainer .listItem {
+.listContainer .listItem {
 	display: flex;
 	align-items: center;
 	gap: 10px;
 	margin-top: 3px;
 }
 
-.dailyToDoContainer .listItem .draggable {
+.listContainer .listItem .draggable {
 	width: 13px;
 	height: 18px;
 	order: 1;
 	opacity: 0;
 }
 
-.dailyToDoContainer .listItem .draggable .dark textarea {
+.listContainer .listItem .draggable .dark textarea {
 	background-color: #000 !important;
 }
 
-.dailyToDoContainer .listItem input[type='checkbox'] {
+.listContainer .listItem input[type='checkbox'] {
 	order: 2;
 }
 
-.dailyToDoContainer .listItem button {
+.listContainer .listItem button {
 	opacity: 0;
 	order: 4;
 }
 
-.dailyToDoContainer .listItem .todoInput:hover + button,
-.dailyToDoContainer .listItem .todoInput:active + button,
-.dailyToDoContainer .listItem .todoInput:focus + button {
+.listContainer .listItem .todoInput:hover + button,
+.listContainer .listItem .todoInput:active + button,
+.listContainer .listItem .todoInput:focus + button {
 	opacity: 1;
 }
 
-.dailyToDoContainer .listItem:hover button {
+.listContainer .listItem:hover button {
 	opacity: 1;
 }
 
-.dailyToDoContainer .listItem .todoInput:hover + button svg,
-.dailyToDoContainer .listItem .todoInput:active + button svg,
-.dailyToDoContainer .listItem .todoInput:focus + button svg,
-.dailyToDoContainer .listItem:hover button svg {
+.listContainer .listItem .todoInput:hover + button svg,
+.listContainer .listItem .todoInput:active + button svg,
+.listContainer .listItem .todoInput:focus + button svg,
+.listContainer .listItem:hover button svg {
 	stroke: #707070;
 	background-color: white;
 	border-color: white;
@@ -64,10 +64,10 @@
 	border-radius: 360px;
 }
 
-.dailyToDoContainer .listItem .todoInput:hover + button svg:hover,
-.dailyToDoContainer .listItem .todoInput:active + button svg:hover,
-.dailyToDoContainer .listItem .todoInput:focus + button svg:hover,
-.dailyToDoContainer .listItem button svg:hover {
+.listContainer .listItem .todoInput:hover + button svg:hover,
+.listContainer .listItem .todoInput:active + button svg:hover,
+.listContainer .listItem .todoInput:focus + button svg:hover,
+.listContainer .listItem button svg:hover {
 	stroke: white;
 	background-color: black;
 	width: 14px;
@@ -76,19 +76,19 @@
 	border-radius: 360px;
 }
 
-.dailyToDoContainer .listItem:hover .todoInput ~ .draggable,
-.dailyToDoContainer .listItem .todoInput:active ~ .draggable,
-.dailyToDoContainer .listItem .todoInput:focus ~ .draggable {
+.listContainer .listItem:hover .todoInput ~ .draggable,
+.listContainer .listItem .todoInput:active ~ .draggable,
+.listContainer .listItem .todoInput:focus ~ .draggable {
 	opacity: 0.5;
 }
 
-.dailyToDoContainer .listItem .todoInput ~ .draggable:hover {
+.listContainer .listItem .todoInput ~ .draggable:hover {
 	opacity: 1;
 }
 
-.dailyToDoContainer .listItem .todoInput,
-.dailyToDoContainer .listItem .todoInput:active,
-.dailyToDoContainer .listItem .todoInput:focus {
+.listContainer .listItem .todoInput,
+.listContainer .listItem .todoInput:active,
+.listContainer .listItem .todoInput:focus {
 	border-left: none;
 	border-right: none;
 	border-top: none;
@@ -105,4 +105,18 @@
 	align-items: center;
 	padding: 0;
 	height: 22px;
+}
+
+.todoDark {
+	color: #fff !important;
+}
+
+.todoDone {
+	text-decoration: line-through !important;
+	color: rgb(193, 193, 193) !important;
+}
+
+.darkCheckbox::before {
+	background: #000 !important;
+	border: 2px solid white !important;
 }

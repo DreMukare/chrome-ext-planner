@@ -100,3 +100,17 @@ listItem button {
 	padding: 0;
 	height: 22px;
 }
+
+.todoDark {
+	color: #fff !important;
+}
+
+.todoDone {
+	text-decoration: line-through !important;
+	color: rgb(193, 193, 193) !important;
+}
+
+.darkCheckbox::before {
+	background: #000 !important;
+	border: 2px solid white !important;
+}

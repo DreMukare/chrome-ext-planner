@@ -1,7 +1,7 @@
 import { Draggable, Droppable } from 'react-beautiful-dnd';
 import rootStore from '../../stores/RootStore';
 import DraggableTodoContainer from '../DraggableTodoContainer';
-import styles from '../../assets/styles/TodoInput.module.css';
+import styles from '../../assets/styles/TodoInputList.module.css';
 import drag from '../../assets/btnimages/drag.svg';
 import IconButton from '../IconButton';
 import { getUuid } from '../../utils/uuid';
@@ -40,7 +40,7 @@ const EmptyListAddBtnSvg = () => (
 	</svg>
 );
 
-const TodoInput = (props: {
+const TodoInputList = (props: {
 	inputsList: { uid: string; text: string | undefined; checked: boolean }[];
 	labelText: string;
 	checkboxName: string;
@@ -199,4 +199,4 @@ const TodoInput = (props: {
 	);
 };
 
-export default TodoInput;
+export default TodoInputList;
