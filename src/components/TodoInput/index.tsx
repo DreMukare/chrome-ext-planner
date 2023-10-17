@@ -4,6 +4,7 @@ import DraggableTodoContainer from '../DraggableTodoContainer';
 import styles from '../../assets/styles/TodoInput.module.css';
 import drag from '../../assets/btnimages/drag.svg';
 import IconButton from '../IconButton';
+import { getUuid } from '../../utils/uuid';
 
 const BtnSvg = () => (
 	<svg
@@ -57,9 +58,39 @@ const TodoInput = (props: {
 		rootStore.planStore.setUpdatePlan(modelName, inputGroup);
 	};
 
-	const handleKeyDown = () => {};
+	const handleKeyDown = (
+		e: React.KeyboardEvent<HTMLTextAreaElement>,
+		idx: number
+	) => {
+		const target = e.target as HTMLElement;
+		target.style.height = '22px';
+		target.style.height = `${target.scrollHeight}px`;
+		target.style.borderBottom = isDarkMode
+			? '2px solid #1A1A1A'
+			: '0.5px solid #575757';
+		target.style.backgroundColor = isDarkMode ? '#080808' : '#FFFFFF';
 
-	const handleMouseEnter = () => {};
+		if (e.key === 'Enter') {
+			e.preventDefault();
+			if (inputsList.length - 1 > idx) {
+				const element = document.getElementById(`${textareaName}${idx + 1}`);
+				element && element.focus();
+			}
+		} else if (inputsList.length - 1 <= idx) {
+			const list = [...inputsList];
+			if (inputsList.length < 3)
+				list.push({ uid: getUuid(), text: '', checked: false });
+			rootStore.planStore.setUpdatePlan(modelName, list);
+		}
+	};
+
+	const handleMouseEnter = (
+		e: React.MouseEvent<HTMLTextAreaElement, MouseEvent>
+	) => {
+		const target = e.target as HTMLElement;
+		target.style.height = '22px';
+		target.style.height = `${target.scrollHeight}px`;
+	};
 
 	const handleButtonClick = () => {};
 
@@ -111,10 +142,16 @@ const TodoInput = (props: {
 													rows={1}
 													name={textareaName}
 													id={textareaName + idx}
-													onKeyDown={() => handleKeyDown()}
-													onMouseEnter={() => handleMouseEnter()}
+													onKeyDown={(e) => handleKeyDown(e, idx)}
+													onMouseEnter={(e) => handleMouseEnter(e)}
 													value={String(inputsList[idx].text)}
-													className=''
+													className={
+														inputsList[idx].checked
+															? `${styles.todoDone} ${styles.todoInput}`
+															: isDarkMode
+															? `${styles.todoDark} ${styles.todoInput}`
+															: styles.todoInput
+													}
 													style={{}}
 												/>
 												<IconButton

@@ -1,0 +1,102 @@
+.listContainer {
+	margintop: 14px;
+}
+
+.listItem {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 3px;
+}
+
+.listItem .todoInput:active ~ button,
+.todoInput:focus ~ button {
+	opacity: 1;
+}
+
+.listItem .todoInput:active ~ button svg,
+.listItem .todoInput:focus ~ button svg {
+	stroke: #707070;
+	background-color: white;
+	border-color: white;
+	width: 14px;
+	height: 14px;
+	border-radius: 360px;
+	border: 1px solid white;
+}
+
+listItem button {
+	opacity: 0;
+	order: 4;
+}
+
+.listItem:hover button {
+	opacity: 1;
+}
+
+.listItem:hover button svg {
+	stroke: #707070;
+	background-color: white;
+	border-color: white;
+	width: 14px;
+	height: 14px;
+	border-radius: 360px;
+	border: 1px solid white;
+}
+
+.listItem .todoInput:focus ~ button svg:hover,
+.listItem .todoInput:active ~ button svg:hover,
+.listItem button svg:hover,
+.listItem button:hover svg {
+	stroke: white;
+	background-color: black;
+	width: 14px;
+	height: 14px;
+	border: 1px solid black;
+	border-radius: 360px;
+}
+
+.listItem input[type='checkbox'] {
+	order: 2;
+}
+
+.listItem .todoInput:hover ~ .draggable,
+.listItem .todoInput:active ~ .draggable,
+.listItem .todoInput:focus ~ .draggable {
+	opacity: 0.5;
+}
+
+.listItem .draggable {
+	width: 13px;
+	height: 18px;
+	opacity: 0;
+	order: 1;
+}
+
+.listItem:hover .draggable {
+	opacity: 0.5;
+}
+
+.listItem .draggable:hover {
+	opacity: 1;
+}
+
+.listItem .todoInput,
+.listItem .todoInput:active,
+.listItem .todoInput:focus {
+	white-space: pre-line;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	outline: none;
+	overflow: hidden;
+	font-family: sans-serif;
+	border-bottom: 0.5px solid #e2e2e2;
+	width: 480px;
+	color: #4e1f77;
+	resize: vertical;
+	resize: none;
+	order: 3;
+	padding: 0;
+	height: 22px;
+}
