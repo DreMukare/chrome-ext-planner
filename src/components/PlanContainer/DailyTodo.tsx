@@ -1,6 +1,7 @@
 import rootStore from '../../stores/RootStore';
 import styles from '../../assets/styles/DailyTodo.module.css';
 import TodoInputList from '../TodoInputList';
+import { observer } from 'mobx-react';
 
 const DailyTodo = () => {
 	const isDarkMode = rootStore.uiStore.isDarkMode;
@@ -24,4 +25,4 @@ const DailyTodo = () => {
 	);
 };
 
-export default DailyTodo;
+export default observer(DailyTodo);

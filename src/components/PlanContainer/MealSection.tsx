@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react';
 import styles from '../../assets/styles/MealSection.module.css';
 import rootStore from '../../stores/RootStore';
 import MealInput from '../MealInput';
@@ -9,11 +10,14 @@ const MealSection = () => {
 
 	return (
 		<div className={styles.mealSection}>
-			{breakfast && <MealInput mealName='breakfast' mealData={breakfast} />}
-			{lunch && <MealInput mealName='lunch' mealData={lunch} />}
-			{dinner && <MealInput mealName='dinner' mealData={dinner} />}
+			{breakfast !== null ||
+				(undefined && <MealInput mealName='breakfast' mealData={breakfast} />)}
+			{lunch !== null ||
+				(undefined && <MealInput mealName='lunch' mealData={lunch} />)}
+			{dinner !== null ||
+				(undefined && <MealInput mealName='dinner' mealData={dinner} />)}
 		</div>
 	);
 };
 
-export default MealSection;
+export default observer(MealSection);

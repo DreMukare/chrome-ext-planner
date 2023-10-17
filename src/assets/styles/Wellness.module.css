@@ -1,0 +1,24 @@
+/* For exercise, meditation and relaxation */
+.exerciseMeditationAndRelaxation {
+	margin-left: 34px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	display: flex;
+	align-items: center;
+	width: 603px;
+	justify-content: space-around;
+}
+
+.exerciseMeditationAndRelaxation .checkSection {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.exerciseMeditationAndRelaxation input[type='checkbox']::before {
+	border: 2px solid black;
+}
+
+.exerciseMeditationAndRelaxation input[type='checkbox']:checked::before {
+	border: none;
+}

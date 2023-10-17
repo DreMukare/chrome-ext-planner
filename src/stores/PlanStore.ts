@@ -3,6 +3,7 @@ import Plan from '../models/Plan';
 
 type IPlanValueType =
 	| string
+	| boolean
 	| { uid: string; text: string | undefined; checked: boolean }[]
 	| { uid: string; text: string | undefined; checked: boolean }
 	| {

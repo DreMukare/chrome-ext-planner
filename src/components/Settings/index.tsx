@@ -1,8 +1,8 @@
-import { observable } from 'mobx';
 import IconButton from '../IconButton';
 import rootStore from '../../stores/RootStore';
 import SettingsTab from '../SettingsTab';
 import screw from '../../assets/btnimages/screw.svg';
+import { observer } from 'mobx-react';
 
 const imgStyle = {
 	margin: '13px',
@@ -31,4 +31,4 @@ const Settings = () => {
 	);
 };
 
-export default observable(Settings);
+export default observer(Settings);

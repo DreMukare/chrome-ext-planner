@@ -3,6 +3,7 @@ import rootStore from '../../stores/RootStore';
 import { getDayName } from '../../utils/dateUtils';
 import tick from '../../assets/btnimages/themeSelectedTick.svg';
 import HorizontalDivider from '../HorizontalDivider';
+import { observer } from 'mobx-react';
 
 // TODO: Refact themeing (do it through tailwind)
 const colorThemes = [
@@ -90,4 +91,4 @@ const PlannerHeader = () => {
 	);
 };
 
-export default PlannerHeader;
+export default observer(PlannerHeader);

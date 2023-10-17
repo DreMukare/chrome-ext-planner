@@ -4,6 +4,7 @@ import Question from '../components/DailyQuestion';
 import Quote from '../components/Quote';
 import Planner from '../components/Planner';
 import rootStore from '../stores/RootStore';
+import { observer } from 'mobx-react';
 
 const Main = () => {
 	const showQuestion = rootStore.uiStore.isQuestionVisible;
@@ -22,4 +23,4 @@ const Main = () => {
 	);
 };
 
-export default Main;
+export default observer(Main);

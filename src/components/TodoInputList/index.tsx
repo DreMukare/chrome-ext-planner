@@ -5,6 +5,7 @@ import styles from '../../assets/styles/TodoInputList.module.css';
 import drag from '../../assets/btnimages/drag.svg';
 import IconButton from '../IconButton';
 import { getUuid } from '../../utils/uuid';
+import { observer } from 'mobx-react';
 
 const BtnSvg = () => (
 	<svg
@@ -199,4 +200,4 @@ const TodoInputList = (props: {
 	);
 };
 
-export default TodoInputList;
+export default observer(TodoInputList);
