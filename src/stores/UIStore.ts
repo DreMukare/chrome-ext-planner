@@ -7,6 +7,7 @@ const UIStore = types
 		isDarkMode: false,
 		isQuestionVisible: true,
 		isWeatherVisible: true,
+		isTimeVisible: true,
 		isPlannerVisible: false,
 		isPlannerOpen: false,
 		displayMonthsOrYears: types.optional(types.string, 'months'),
@@ -46,6 +47,10 @@ const UIStore = types
 
 		setIsWeatherVisibile(weatherVisibility: boolean) {
 			self.isWeatherVisible = weatherVisibility;
+		},
+
+		setIsTimeVisibile(timeVisibility: boolean) {
+			self.isTimeVisible = timeVisibility;
 		},
 
 		setTimeFormat(timeFormat: '24' | '12') {
