@@ -31,6 +31,7 @@ const LoginCard = (props: {
 				}}
 			>
 				<InputGroup
+					name='email'
 					title='Email'
 					type='email'
 					icon={FaEnvelope}
@@ -39,6 +40,7 @@ const LoginCard = (props: {
 					onChange={setEmailInChild}
 				/>
 				<InputGroup
+					name='email'
 					title='Password'
 					type='password'
 					icon={FaKey}

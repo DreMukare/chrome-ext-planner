@@ -4,6 +4,7 @@ import { persist } from 'mst-persist';
 import AuthStore from './AuthStore';
 import UIStore from './UIStore';
 import PlanStore from './PlanStore';
+import QuestionStore from './QuestionStore';
 // import ThemeStore from './ThemeStore';
 
 export const RootStore = types
@@ -12,6 +13,7 @@ export const RootStore = types
 		authStore: types.optional(AuthStore, () => AuthStore.create()),
 		uiStore: types.optional(UIStore, () => UIStore.create()),
 		planStore: types.optional(PlanStore, () => PlanStore.create()),
+		questionStore: types.optional(QuestionStore, () => QuestionStore.create()),
 		// profileStore: types.optional(ProfileStore, () => ProfileStore.create()),
 		// themeStore: types.optional(ThemeStore, () => ThemeStore.create())
 	})
@@ -33,10 +35,14 @@ export const RootStore = types
 
 export interface IAuthStore extends Instance<typeof AuthStore> {}
 export interface IUIStore extends Instance<typeof UIStore> {}
+export interface IPlanStore extends Instance<typeof PlanStore> {}
+export interface IQuestionStore extends Instance<typeof QuestionStore> {}
 
 export interface IRootStore {
 	authStore: IAuthStore;
 	uiStore: IUIStore;
+	planStore: IPlanStore;
+	questionStore: IQuestionStore;
 	resetStore: () => void;
 }
 

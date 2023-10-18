@@ -1,0 +1,126 @@
+.darkBottom {
+	background-color: #fbfbfb;
+	border-radius: 0 0 0 19px;
+	padding: 30px 0;
+}
+
+.happinessScale {
+	margin-bottom: 30px;
+	max-height: 83px;
+}
+
+.happinessScale .labelSection {
+	display: flex;
+	align-items: center;
+	column-gap: 23px;
+	margin-left: 20px;
+	margin-bottom: 30px;
+}
+
+.happinessScale .labelSection img {
+	height: 15px;
+	width: 15px;
+}
+
+.happinessScale .happinessChecks .betweenChecks {
+	border: 0.5px solid #e2e2e2;
+	width: 34px;
+}
+
+.happinessScale .happinessChecks {
+	margin-left: 54px;
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	width: 603px;
+}
+
+.happinessScale .happinessChecks .labelArea {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.happinessScale .happinessChecks .labelArea img {
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	top: -7px;
+	left: 5px;
+	visibility: hidden;
+}
+
+.happinessScale .happinessChecks .labelArea label {
+	text-align: center;
+	font-size: 11px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 24px;
+	height: 24px;
+	border-radius: 360px;
+	cursor: pointer;
+	color: white;
+}
+
+.happinessScale .happinessChecks .labelArea label:hover {
+	box-shadow: 0px 3px 3px #ff8bd0;
+	border: 0.5px solid #ff90d0;
+}
+
+.happinessScale
+	.happinessChecks
+	input[type='radio']:checked
+	~ .labelArea
+	label {
+	color: white;
+	background-color: #ff90d0 !important;
+	box-shadow: none !important;
+}
+
+.dailyQuestion {
+	margin-left: 51px;
+	width: 603px;
+	max-width: 603px;
+}
+
+.dailyQuestion textarea,
+.dailyQuestion textarea:focus,
+.dailyQuestion textarea:active {
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	outline: none;
+	overflow: hidden;
+	font-family: sans-serif;
+	border-bottom: 0.5px solid #e2e2e2;
+	width: 603px;
+	color: #4e1f77;
+	resize: vertical;
+	margin-top: 7px;
+	padding: 0;
+	resize: none;
+	height: 22px;
+}
+
+.questionInput {
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	outline: none;
+	overflow: hidden;
+	font-family: sans-serif;
+	border-bottom: 0.5px solid #e2e2e2;
+	width: 260px;
+	height: 22px;
+	color: #4e1f77;
+	resize: vertical;
+	margin-top: 7px;
+	resize: none;
+	padding: 0;
+	min-height: 22px;
+	display: inline-block;
+	overflow-y: hidden;
+	height: auto;
+}
