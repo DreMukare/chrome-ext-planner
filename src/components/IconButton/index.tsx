@@ -14,6 +14,7 @@ const IconButton = (props: {
 	hasImgAndText?: boolean;
 	btnText?: string;
 	isButtonDisabled?: boolean;
+	buttonStyleOverride?: string;
 }) => {
 	const {
 		onClick,
@@ -28,6 +29,7 @@ const IconButton = (props: {
 		hasImgAndText,
 		btnText,
 		isButtonDisabled,
+		buttonStyleOverride,
 	} = props;
 
 	return (
@@ -38,6 +40,7 @@ const IconButton = (props: {
 			}}
 			name={name}
 			style={btnStyle}
+			className={buttonStyleOverride ? buttonStyleOverride : ''}
 			disabled={isButtonDisabled}
 		>
 			{Icon && <Icon style={iconStyle} />}

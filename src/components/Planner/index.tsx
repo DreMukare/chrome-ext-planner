@@ -3,8 +3,8 @@ import { useState, useCallback, useRef } from 'react';
 import rootStore from '../../stores/RootStore';
 import styles from '../../assets/styles/PlanStyles.module.css';
 import containerStyles from '../../assets/styles/PlanContainerStyles.module.css';
-import IconButton from '../IconButton';
 import PlanContainer from '../PlanContainer';
+import PlannerToggleButton from '../PlannerToggleButton';
 
 const Planner = () => {
 	const [animation, setAnimation] = useState(containerStyles.scaleIn);
@@ -29,7 +29,11 @@ const Planner = () => {
 			{rootStore.uiStore.isPlannerVisible && (
 				<PlanContainer animationStyle={animation} ref={planContainerRef} />
 			)}
-			<IconButton />
+			<PlannerToggleButton
+				toggleButtonStyles={containerStyles}
+				isPlannerVisible={isPlannerVisible}
+				togglePlanVisibility={togglePlanVisibility}
+			/>
 		</div>
 	);
 };

@@ -16,6 +16,26 @@ export type MonthType =
 	| 'Nov'
 	| 'Dec';
 
+export const monthNames = [
+	'Jan',
+	'Feb',
+	'Mar',
+	'Apr',
+	'Jun',
+	'Jul',
+	'May',
+	'Aug',
+	'Sep',
+	'Oct',
+	'Nov',
+	'Dec',
+];
+
+export const yearRange = [
+	2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035,
+	2036,
+];
+
 export const isLeapYear = (year: string) => {
 	return (
 		(0 === parseInt(year) % 4 && 0 !== parseInt(year) % 100) ||

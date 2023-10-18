@@ -1,5 +1,6 @@
 import rootStore from '../../stores/RootStore';
 import styles from '../../assets/styles/DailyTodo.module.css';
+import parentStyles from '../../assets/styles/PlanContainerStyles.module.css';
 import TodoInputList from '../TodoInputList';
 import { observer } from 'mobx-react';
 
@@ -20,6 +21,7 @@ const DailyTodo = () => {
 				checkboxName='mainThreeTodoCheckbox'
 				modelName='mainTodo'
 				textareaName='mainThreeTodoInput'
+				styleOverride={parentStyles}
 			/>
 		</div>
 	);

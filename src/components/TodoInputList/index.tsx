@@ -191,6 +191,7 @@ const TodoInputList = (props: {
 								name='Add item to list'
 								onClick={() => handleAddButtonClick()}
 								btnText='Add todo'
+								buttonStyleOverride={stylesForComponent.addTaskBtn}
 							/>
 						)}
 					</div>

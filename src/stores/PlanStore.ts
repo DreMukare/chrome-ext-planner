@@ -1,5 +1,6 @@
 import { Instance, types } from 'mobx-state-tree';
 import Plan from '../models/Plan';
+import rootStore from './RootStore';
 
 type IPlanValueType =
 	| string
@@ -46,6 +47,11 @@ const PlanStore = types
 		setUpdatePlan(planKey: string, planValue: IPlanValueType) {
 			const newPlan = { ...self.plan, [planKey]: planValue };
 			self.plan = JSON.parse(JSON.stringify(newPlan));
+		},
+	}))
+	.views((self) => ({
+		getFullDate() {
+			return `${self.currentDay}-${self.currentMonth}-${self.currentYear}`;
 		},
 	}));
 

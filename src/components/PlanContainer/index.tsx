@@ -1,4 +1,4 @@
-import { useState, useRef, LegacyRef } from 'react';
+import { LegacyRef } from 'react';
 import styles from '../../assets/styles/PlanContainer.module.css';
 import PlannerHeader from './PlannerHeader';
 import GratefulForAndExcitedAbout from './GratefulForAndExcitedAbout';
@@ -8,6 +8,7 @@ import MealSection from './MealSection';
 import PlannerFooterSection from './PlannerFooterSection';
 import WaterSection from './WaterSection';
 import ExerciseMeditationAndRelaxation from './ExerciseMeditationAndRelaxation';
+import DatePicker from '../DatePicker';
 
 const PlanContainer = (props: {
 	animationStyle: string;
@@ -27,6 +28,7 @@ const PlanContainer = (props: {
 				<ExerciseMeditationAndRelaxation />
 				<PlannerFooterSection />
 			</form>
+			<DatePicker />
 		</div>
 	);
 };

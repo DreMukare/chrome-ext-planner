@@ -7,7 +7,7 @@ const todo = types.model({
 	checked: types.optional(types.boolean, false),
 });
 
-const initTodo = [
+export const initTodo = [
 	{ uid: getUuid(), text: '', checked: false },
 	{ uid: getUuid(), text: '', checked: false },
 	{ uid: getUuid(), text: '', checked: false },
@@ -19,7 +19,7 @@ export const meal = types.model({
 	calories: types.optional(types.string, ''),
 });
 
-const initMeal = [
+export const initMeal = [
 	{
 		uid: getUuid(),
 		mealName: '',
@@ -40,6 +40,7 @@ const initMeal = [
 export const MealArray = types.array(meal);
 
 const Plan = types.model({
+	user: types.identifier,
 	date: types.Date,
 	mainTodo: types.optional(types.array(todo), initTodo),
 	dailyTodo: types.optional(types.array(todo), initTodo),

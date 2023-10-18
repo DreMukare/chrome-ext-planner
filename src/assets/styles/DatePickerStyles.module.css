@@ -1,0 +1,156 @@
+.datePicker {
+	border-left: 0.5px solid #ffefef;
+	width: 7.063rem;
+	min-width: 7.063rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+	height: 100%;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	overflow-y: scroll;
+	background-color: #fdf8f8;
+	border-top-right-radius: 19px;
+	border-bottom-right-radius: 19px;
+	transition: 0.3s ease-in-out;
+}
+
+.datePicker .selectors {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+
+	width: 100%;
+}
+
+.datePicker button:active,
+.datePicker button:focus {
+	border: 0.5px solid #ffb1b1;
+	box-shadow: 0px 3px 2px #ffb7b7;
+	margin-bottom: 5px;
+}
+
+.datePicker button:hover {
+	box-shadow: 0px 3px 2px #ffb1b1;
+}
+
+/* styles for day selector */
+.datePicker .selectors .days {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	color: black;
+	margin-left: 15px;
+	margin-right: 15px;
+	overflow: scroll;
+	height: 100%;
+}
+
+.datePicker .selectors .days .day {
+	width: 18px;
+	height: 23px;
+	margin-bottom: 2.8px;
+	font-size: 10px;
+	color: #dc60a8;
+	box-shadow: inherit;
+	border-radius: 90px;
+
+	transition: 0.3s ease-in-out;
+}
+
+.datePicker .selectors .days .day:hover {
+	box-shadow: 0px 2px 4px #ffbfbf;
+
+	border: 0.5px solid #ffd3d3;
+}
+
+/* styles for months and years display */
+.datePicker .selectors .monthsOrYears {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	width: 5vh;
+	height: 100%;
+}
+
+.datePicker .selectors .monthsOrYears .period {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	background-color: white;
+	border-radius: 360px;
+	border: 1px solid #ffefef;
+	margin-bottom: -0.9em;
+	color: black;
+	width: 4.8vh;
+	height: 100%;
+	min-width: 35px;
+	transition: 0.3s ease-in-out;
+}
+
+.datePicker .selectors .monthsOrYears .period button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 4vh;
+	height: 6.65vh;
+	margin-bottom: 3.5px;
+	border-radius: 90px;
+	color: #d94f9f;
+	font-size: 10px;
+}
+
+/* calendar icon styling */
+.datePicker .calendarIcon {
+	min-width: 5vh;
+	min-height: 5vh;
+	box-shadow: 0px 3px 6px #ffbfbf;
+	border: 1px solid #ffcece;
+	border-radius: 90px;
+	margin-top: 5px;
+	align-self: flex-end;
+	margin-right: calc(100% / 2 - 48px / 2 - 5vh / 2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.datePicker .calendarIcon img {
+	width: 17px;
+	height: 17px;
+}
+
+.datePicker .calendarIcon svg {
+	stroke: #ffcece;
+	width: 28px;
+	height: 28px;
+}
+
+@media screen and (max-height: 900px) {
+	.datePicker .monthsOrYears .selectors .period {
+		width: 6vh;
+	}
+	.datePicker .monthsOrYears .selectors.period button {
+		width: 5.5vh;
+		height: 6.65vh;
+		margin-bottom: 3.5px;
+	}
+}
+@media screen and (max-height: 700px) {
+	.datePicker .monthsOrYears .selectors .period {
+		width: 7vh;
+	}
+	.datePicker .monthsOrYears .selectors .period button {
+		width: 6vh;
+		height: 6.5h;
+		margin-bottom: 1px;
+	}
+}

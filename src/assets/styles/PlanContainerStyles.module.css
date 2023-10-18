@@ -163,3 +163,50 @@
 		opacity: 1;
 	}
 }
+
+.planToggle {
+	.planToggle {
+		position: absolute;
+		right: 15px;
+		bottom: 5px;
+		margin: 5px;
+		background: none;
+		border: none;
+		cursor: pointer;
+	}
+
+	.planToggle img {
+		height: 25.74px;
+		width: 19px;
+	}
+}
+
+/*
+* Styles for add task button
+*/
+.addTaskBtn {
+	margin-left: 17px;
+	background: none;
+}
+
+.addTaskBtn svg {
+	width: 17px;
+	height: 17px;
+	stroke: #ff9300;
+	border: 1px solid #cbcbcb;
+	border-radius: 360px;
+}
+
+.addTaskBtn svg:hover {
+	stroke: white;
+	background: #ff9300;
+	border-color: #ff9300;
+}
+
+.addTaskBtn svg + span {
+	opacity: 0;
+}
+
+.addTaskBtn svg:hover + span {
+	opacity: 1;
+}
