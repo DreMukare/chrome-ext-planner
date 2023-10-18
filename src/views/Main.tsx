@@ -5,6 +5,7 @@ import Quote from '../components/Quote';
 import Planner from '../components/Planner';
 import rootStore from '../stores/RootStore';
 import { observer } from 'mobx-react';
+import WeatherTimeSection from '../components/WeatherTimeSection';
 
 const Main = () => {
 	const showQuestion = rootStore.uiStore.isQuestionVisible;
@@ -17,6 +18,7 @@ const Main = () => {
 				<Quote />
 			</section>
 			<section className={styles.planAndWeatherSection}>
+				<WeatherTimeSection />
 				<Planner />
 			</section>
 		</section>

@@ -1,5 +1,5 @@
 import { LegacyRef } from 'react';
-import styles from '../../assets/styles/PlanContainer.module.css';
+import styles from '../../assets/styles/PlanContainerStyles.module.css';
 import PlannerHeader from './PlannerHeader';
 import GratefulForAndExcitedAbout from './GratefulForAndExcitedAbout';
 import DailyTodo from './DailyTodo';
