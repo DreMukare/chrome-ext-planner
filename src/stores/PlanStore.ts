@@ -1,6 +1,5 @@
 import { Instance, types } from 'mobx-state-tree';
 import Plan from '../models/Plan';
-import rootStore from './RootStore';
 
 type IPlanValueType =
 	| string
@@ -19,12 +18,19 @@ type IPlanValueType =
 	  }
 	| { [key: string]: string | boolean };
 
+const date = new Date();
+const todayDate = date.getDate().toString();
+const todayMonth = date
+	.toLocaleString('default', { month: 'short' })
+	.toString();
+const todayYear = date.getFullYear().toString();
+
 const PlanStore = types
 	.model({
 		plan: types.maybe(Plan),
-		currentDay: types.string,
-		currentMonth: types.string,
-		currentYear: types.string,
+		currentDay: types.optional(types.string, todayDate),
+		currentMonth: types.optional(types.string, todayMonth),
+		currentYear: types.optional(types.string, todayYear),
 	})
 	.actions((self) => ({
 		setPlan(plan: Instance<typeof Plan>) {

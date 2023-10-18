@@ -2,7 +2,7 @@ import { types } from 'mobx-state-tree';
 
 const QuestionStore = types
 	.model({
-		uid: types.identifier,
+		user: types.maybe(types.string),
 		question: types.optional(
 			types.string,
 			'What is your definition of happiness?'

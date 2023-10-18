@@ -61,20 +61,23 @@ const DatePicker = () => {
 								key={idx}
 								onClick={async (e) => {
 									// syncPlan(payload, date);
-									if (String(day + 1) !== currentDay) {
+									if ((day + 1).toString() !== currentDay) {
 										// storePlanInDb();
-										rootStore.planStore.setCurrentDay(String(day + 1));
+										rootStore.planStore.setCurrentDay((day + 1).toString());
 									}
 								}}
 								style={{
 									fontFamily: 'Quicksand',
 									border:
-										String(day + 1) === currentDay
+										(day + 1).toString() === currentDay
 											? '0.5px solid #FFEFEF'
 											: `0.5px solid ${dateBorderColor}`,
 									backgroundColor:
-										String(day + 1) === currentDay ? '#000000' : dateBgColor,
-									color: String(day + 1) === currentDay ? 'white' : '#dc60a8',
+										(day + 1).toString() === currentDay
+											? '#000000'
+											: dateBgColor,
+									color:
+										(day + 1).toString() === currentDay ? 'white' : '#dc60a8',
 								}}
 								className={styles.day}
 							>
@@ -99,7 +102,7 @@ const DatePicker = () => {
 											// syncPlan(payload, date);
 											// storePlanInDb();
 											PlanService.resetPlan();
-											rootStore.planStore.setCurrentMonth(String(month));
+											rootStore.planStore.setCurrentMonth(month.toString());
 										}}
 										style={{
 											fontFamily: 'Varela Round',
@@ -131,15 +134,20 @@ const DatePicker = () => {
 											// syncPlan(payload, date);
 											// storePlanInDb();
 											PlanService.resetPlan();
-											rootStore.planStore.setCurrentYear(String(year));
+											rootStore.planStore.setCurrentYear(year.toString());
 										}}
 										style={{
 											fontFamily: 'Quicksand',
 											border:
-												String(year) === currentYear ? '1px solid #FFEFEF' : '',
+												year.toString() === currentYear
+													? '1px solid #FFEFEF'
+													: '',
 											backgroundColor:
-												String(year) === currentYear ? '#000000' : dateBgColor,
-											color: String(year) === currentYear ? 'white' : '#dc60a8',
+												year.toString() === currentYear
+													? '#000000'
+													: dateBgColor,
+											color:
+												year.toString() === currentYear ? 'white' : '#dc60a8',
 										}}
 									>
 										{year}

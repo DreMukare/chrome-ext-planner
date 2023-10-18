@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from './WeatherTime.module.css';
+import styles from '../../assets/styles/WeatherTime.module.css';
 import rootStore from '../../stores/RootStore';
 import { observer } from 'mobx-react';
 import useLocalityData from '../../hooks/useLocalityData';
