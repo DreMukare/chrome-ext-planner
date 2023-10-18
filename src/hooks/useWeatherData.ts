@@ -9,23 +9,29 @@ const useWeatherData = () => {
 	};
 
 	if ('geolocation' in navigator) {
-		const fetchWeatherData = () => {
-			navigator.geolocation.getCurrentPosition(
-				(position) => {
-					return axios
-						.get(
-							`https://api.openweathermap.org/data/2.5/weather?lat=${
-								position.coords.latitude
-							}&lon=${position.coords.longitude}&appid=${
-								import.meta.env.VITE_OPENWEATHERAPI_KEY
-							}&units=metric`
-						)
-						.then((res) => res.data);
-				},
-				(err) => {
-					handleGeoErr(err);
-				}
-			);
+		const fetchWeatherData = async () => {
+			return new Promise((resolve, reject) => {
+				navigator.geolocation.getCurrentPosition(
+					async (position) => {
+						try {
+							const response = await axios.get(
+								`https://api.openweathermap.org/data/2.5/weather?lat=${
+									position.coords.latitude
+								}&lon=${position.coords.longitude}&appid=${
+									import.meta.env.VITE_OPENWEATHERAPI_KEY
+								}&units=metric`
+							);
+							resolve(response.data);
+						} catch (error) {
+							reject(error);
+						}
+					},
+					(err) => {
+						handleGeoErr(err);
+						reject(err);
+					}
+				);
+			});
 		};
 
 		return useQuery(['weather'], fetchWeatherData);

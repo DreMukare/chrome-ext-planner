@@ -12,19 +12,25 @@ const useLocalityData = () => {
 		}`;
 
 	if ('geolocation' in navigator) {
-		const fetchLocalityData = () => {
-			navigator.geolocation.getCurrentPosition(
-				(position) => {
-					return axios
-						.get(
-							getQueryUrl(position.coords.latitude, position.coords.longitude)
-						)
-						.then((res) => res.data.locality);
-				},
-				(err) => {
-					handleGeoErr(err);
-				}
-			);
+		const fetchLocalityData = async () => {
+			return new Promise((resolve, reject) => {
+				navigator.geolocation.getCurrentPosition(
+					async (position) => {
+						try {
+							const response = await axios.get(
+								getQueryUrl(position.coords.latitude, position.coords.longitude)
+							);
+							resolve(response.data);
+						} catch (error) {
+							reject(error);
+						}
+					},
+					(err) => {
+						handleGeoErr(err);
+						reject(err);
+					}
+				);
+			});
 		};
 
 		return useQuery(['location'], fetchLocalityData);

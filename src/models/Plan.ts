@@ -1,37 +1,31 @@
 import { types } from 'mobx-state-tree';
-import { getUuid } from '../utils/uuid';
 
 const todo = types.model({
-	uid: types.maybe(types.identifier),
 	text: types.optional(types.string, ''),
 	checked: types.optional(types.boolean, false),
 });
 
 export const initTodo = [
-	{ uid: getUuid(), text: '', checked: false },
-	{ uid: getUuid(), text: '', checked: false },
-	{ uid: getUuid(), text: '', checked: false },
+	{ text: '', checked: false },
+	{ text: '', checked: false },
+	{ text: '', checked: false },
 ];
 
 export const meal = types.model({
-	uid: types.maybe(types.identifier),
 	mealName: types.optional(types.string, ''),
 	calories: types.optional(types.string, ''),
 });
 
 export const initMeal = [
 	{
-		uid: getUuid(),
 		mealName: '',
 		calories: '',
 	},
 	{
-		uid: getUuid(),
 		mealName: '',
 		calories: '',
 	},
 	{
-		uid: getUuid(),
 		mealName: '',
 		calories: '',
 	},

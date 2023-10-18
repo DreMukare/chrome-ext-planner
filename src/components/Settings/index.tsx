@@ -3,6 +3,7 @@ import rootStore from '../../stores/RootStore';
 import SettingsTab from '../SettingsTab';
 import screw from '../../assets/btnimages/screw.svg';
 import { observer } from 'mobx-react';
+import styles from '../../assets/styles/SettingsStyles.module.css';
 
 const imgStyle = {
 	margin: '13px',
@@ -18,7 +19,7 @@ const Settings = () => {
 	};
 
 	return (
-		<div>
+		<div className={styles.settings}>
 			{rootStore.uiStore.showSettingsContainer && <SettingsTab />}
 			<IconButton
 				onClick={handleClick}

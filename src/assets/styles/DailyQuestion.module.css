@@ -50,7 +50,7 @@
 	padding-left: 34px;
 	width: 1023px;
 	height: 49px;
-	background: transparent url('../images/Rectangle145.png') 0% 0% no-repeat
+	background: transparent url('../btnimages/Rectangle145.png') 0% 0% no-repeat
 		padding-box;
 	border-radius: 360px;
 	border: none;
@@ -64,7 +64,7 @@
 .questionContainer .inner form input:active {
 	outline: none;
 	border: none;
-	background: transparent url('../images/Rectangle145.png') 0% 0% no-repeat
+	background: transparent url('../btnimages/Rectangle145.png') 0% 0% no-repeat
 		padding-box;
 }
 

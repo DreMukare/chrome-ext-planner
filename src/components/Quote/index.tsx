@@ -1,5 +1,7 @@
+import styles from '../../assets/styles/QuoteStyles.module.css';
+
 const Quote = () => {
-	return <div>Quote</div>;
+	return <div className={styles.quoteContainer}></div>;
 };
 
 export default Quote;

@@ -4,15 +4,13 @@ import Plan from '../models/Plan';
 type IPlanValueType =
 	| string
 	| boolean
-	| { uid: string; text: string | undefined; checked: boolean }[]
-	| { uid: string; text: string | undefined; checked: boolean }
+	| { text: string | undefined; checked: boolean }[]
+	| { text: string | undefined; checked: boolean }
 	| {
-			uid: string;
 			mealName: string | undefined;
 			calories: string | undefined;
 	  }[]
 	| {
-			uid: string;
 			mealName: string | undefined;
 			calories: string | undefined;
 	  }

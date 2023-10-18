@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../../assets/styles/WeatherTime.module.css';
 import rootStore from '../../stores/RootStore';
 import { observer } from 'mobx-react';
@@ -8,8 +8,7 @@ import useWeatherData from '../../hooks/useWeatherData';
 const WeatherTimeSection = () => {
 	const [date, setDate] = useState(new Date());
 
-	// TODO: Add type definitions for weather and location data
-	// @ts-ignore
+	// Fetch location data using the custom hook
 	const {
 		// @ts-ignore
 		data: locationData,
@@ -18,6 +17,8 @@ const WeatherTimeSection = () => {
 		// @ts-ignore
 		isLoading: isLoadingLocation,
 	} = useLocalityData();
+
+	// Fetch weather data using the custom hook
 	const {
 		// @ts-ignore
 		data: weatherData,
@@ -27,12 +28,11 @@ const WeatherTimeSection = () => {
 		isLoading: isLoadingWeather,
 	} = useWeatherData();
 
+	// Check for and log any errors
 	if (localityError) console.log('ERROR GETTING LOCATION: ' + localityError);
-
 	if (weatherError) console.log('ERROR GETTING LOCATION: ' + weatherError);
 
-	if (isLoadingLocation || isLoadingWeather) return '';
-
+	// Determine whether to display time and weather
 	const {
 		isWeatherVisible: displayWeather,
 		isTimeVisible: displayTime,
@@ -41,13 +41,15 @@ const WeatherTimeSection = () => {
 
 	const twentyFourHours = timeFormat === '24';
 
+	// Update the time every 30 seconds
 	useEffect(() => {
 		const interval = setInterval(() => setDate(new Date()), 30000);
 
 		return () => clearInterval(interval);
 	}, []);
 
-	return (
+	// Render the component
+	return weatherData && locationData ? (
 		<div className={styles.weatherTimeSectionContainer}>
 			{displayTime && (
 				<div className={styles.time}>
@@ -102,6 +104,8 @@ const WeatherTimeSection = () => {
 				</div>
 			)}
 		</div>
+	) : (
+		''
 	);
 };
 

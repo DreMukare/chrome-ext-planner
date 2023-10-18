@@ -1,5 +1,4 @@
-import { Instance } from 'mobx-state-tree';
-import Plan, { initMeal, initTodo } from '../models/Plan';
+import { initMeal, initTodo } from '../models/Plan';
 import rootStore from '../stores/RootStore';
 
 export const defualtPlanData = {

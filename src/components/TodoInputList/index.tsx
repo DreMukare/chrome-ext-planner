@@ -42,7 +42,7 @@ const EmptyListAddBtnSvg = () => (
 );
 
 const TodoInputList = (props: {
-	inputsList: { uid: string; text: string | undefined; checked: boolean }[];
+	inputsList: { text: string | undefined; checked: boolean }[];
 	labelText: string;
 	checkboxName: string;
 	textareaName: string;
@@ -61,7 +61,6 @@ const TodoInputList = (props: {
 	const stylesForComponent = styleOverride ? styleOverride : styles;
 
 	const handleCheckboxChange = (inputGroup: {
-		uid: string;
 		text: string | undefined;
 		checked: boolean;
 	}) => {
@@ -91,8 +90,7 @@ const TodoInputList = (props: {
 			}
 		} else if (inputsList.length - 1 <= idx) {
 			const list = [...inputsList];
-			if (inputsList.length < 3)
-				list.push({ uid: getUuid(), text: '', checked: false });
+			if (inputsList.length < 3) list.push({ text: '', checked: false });
 			rootStore.planStore.setUpdatePlan(modelName, list);
 		}
 	};
